@@ -15,18 +15,23 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="grid">
+    <div className="container">
 
-      {data.map(i => (
-        <Link href={`/profile/${i.id}`} key={i.id} className="card">
+      <h1 className="title">Top Influencers</h1>
 
-          <img src={i.imageUrl} />
-          <h3>{i.name}</h3>
-          <p>{i.category}</p>
-          <p>👥 {i.followers}</p>
+      <div className="grid">
+        {data.map(i => (
+          <Link href={`/profile/${i.id}`} key={i.id} className="card">
 
-        </Link>
-      ))}
+            <img src={i.imageUrl} alt={i.name} />
+
+            <h3>{i.name}</h3>
+            <p className="category">{i.category}</p>
+            <p className="followers">👥 {i.followers}</p>
+
+          </Link>
+        ))}
+      </div>
 
     </div>
   );
