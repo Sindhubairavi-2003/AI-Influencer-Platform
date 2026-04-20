@@ -19,11 +19,18 @@ export default function Login() {
     <div className="login-bg">
       <div className="login-box">
 
-        <input placeholder="Username"
-          onChange={e => setUser({ ...user, username: e.target.value })} />
+        <h2>Login</h2>
 
-        <input type="password"
-          onChange={e => setUser({ ...user, password: e.target.value })} />
+        <input
+          placeholder="Username"
+          onChange={e => setUser({ ...user, username: e.target.value })}
+        />
+
+        <input
+          type="password"
+          placeholder="Password"
+          onChange={e => setUser({ ...user, password: e.target.value })}
+        />
 
         <button onClick={login}>Login</button>
 
